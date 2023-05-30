@@ -1,0 +1,19 @@
+.out{
+  display: flex;
+  margin-right: 40px;
+}
+.out>div{
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #656d76;;
+  cursor: pointer;
+  margin-right: 10px;
+}
+input:focus{
+  outline: none;
+}

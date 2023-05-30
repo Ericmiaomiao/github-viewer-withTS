@@ -1,0 +1,96 @@
+.out{
+  margin-left: 376px;
+  color: #656d76;
+}
+.topButton{
+  display: flex;
+  line-height: 30px;
+  margin-top: 20px;
+}
+.sortbutton{
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #656d76;
+  cursor: pointer;
+  margin-right: 10px;
+  display: inline-block;
+}
+.onbutton{
+  background-color: #3f90ed;
+  color: #ffffff;
+}
+.topLine{
+  width: 896px;
+  height: 1px;
+  background-color: rgb(208, 207, 207);
+  margin-top: 16px;
+}
+.proj{
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgb(208, 207, 207);
+}
+.name{
+  color: #3f90ed;
+  font-size: 20px;
+  font-weight:600;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  cursor: pointer;
+}
+.name:hover{
+  text-decoration: underline;
+}
+.description{
+  font-size: 14px;
+  color: #656d76;
+  margin-top: 7px;
+  width: 504px;
+}
+.topics{
+  display: flex;
+}
+.topics>div{
+  padding: 4px 8px;
+  background-color: #ddf4ff;
+  font-size: 12px;
+  color: #0969da;
+  border-radius: 8px;
+  margin-right: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.topics>div:hover{
+  color: aliceblue;
+  background-color: #0969da;
+  transition: all 0.1s;
+}
+.otherInfo{
+  display: flex;
+  margin-top: 20px;
+}
+.otherInfo>div{
+  font-size: 12px;
+  color: #656d76;
+  margin-right: 20px;
+}
+.iconcollect{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 3px;
+}
+.iconshare{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  margin-right: 3px;
+}
