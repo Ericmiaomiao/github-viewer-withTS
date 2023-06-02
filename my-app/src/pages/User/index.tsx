@@ -7,15 +7,16 @@ import { getCookie } from '../../cookie'
 import Nav from '../../components/Nav'
 import Content from '../../components/Content'
 
-// 引入redux容器组件所需：
-import {connect} from 'react-redux'
-import {setUserinfo,setUserproj} from '../../store/actions/actions'
+// 引入redux所需：
+import { useAppDispatch } from '../../store/hooks'
+import { setUserInfo,setUserProj } from '../../store/reducers/user'
 
-function User(props:any) {
-  let navigate = useNavigate()
+export default function User() {
+  const navigate = useNavigate()
+  const dispatch = useAppDispatch()
 
   // 初始化贡献者名 从cookie中获取
-  let [username,setusername]:[string,any] = useState(getCookie('token'))
+  const [username,setusername] = useState<string>(getCookie('token'))
 
   // 页面鉴权，如果没有token跳转到登录页面
   useEffect(()=>{
@@ -23,7 +24,7 @@ function User(props:any) {
       alert('请登录')
       navigate('/login')
     }
-  },[])
+  },[navigate])
 
   // 请求api返回数据：  
   useEffect(()=>{
@@ -31,7 +32,8 @@ function User(props:any) {
     getUserInfo(username)
     .then((res)=>{
       console.log('getUserInfo请求成功',res)
-      props.setUserinfo(res.data)
+      // 将用户信息传入redux的store中
+      dispatch(setUserInfo(res.data))
     })
     .catch((err)=>{
       console.log('getUserInfo请求失败',err)
@@ -42,12 +44,13 @@ function User(props:any) {
     getUserProj(username)
     .then((res)=>{
       console.log('getUserProj请求成功',res)
-      props.setUserproj(res.data)
+      // 将用户项目信息传入redux的store中
+      dispatch(setUserProj(res.data))
     })
     .catch((err)=>{
       console.log('getUserProj请求失败',err)
     })
-  },[username])
+  },[username,dispatch])
 
   return (
     <div>
@@ -58,14 +61,3 @@ function User(props:any) {
     </div>
   )
 }
-
-// 构建容器组件：
-const mapStateToProps = (state:any)=>{
-  return{
-    ...state.user
-  }
-}
-export default connect(
-  mapStateToProps,
-  {setUserinfo,setUserproj}
-)(User)

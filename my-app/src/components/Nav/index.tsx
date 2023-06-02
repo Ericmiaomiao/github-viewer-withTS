@@ -4,13 +4,16 @@ import {useNavigate} from 'react-router-dom'
 import { setCookie } from '../../cookie'
 
 import Navstyle from './index.module.css'
+interface IProps {
+  username:[string,React.Dispatch<React.SetStateAction<string>>],
+}
 
-export default function Nav(props) {
+export default function Nav(props:IProps) {
   let navigate = useNavigate()
-  let inputRef = useRef(null) 
+  let inputRef = useRef<HTMLInputElement>(null) 
   
   // 初始化用户名
-  const [username,setusername]:[string,any] = props.username
+  const [username,setusername] = props.username
   
   // 点击search，更改用户名
   let search=()=>{

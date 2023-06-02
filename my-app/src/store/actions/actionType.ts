@@ -1,2 +1,0 @@
-export const SET_USERFINFO = 'SET_USERFINFO'
-export const SET_USERPROJ = 'SET_USERPROJ'

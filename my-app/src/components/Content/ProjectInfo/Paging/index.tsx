@@ -2,15 +2,17 @@ import React ,{useState,useEffect}from 'react'
 
 import pagingstyle from './index.module.css' 
 
-// 引入redux容器组件所需：
-import {connect} from 'react-redux'
-import {setUserinfo,setUserproj} from '../../../../store/actions/actions'
+import { useAppSelector } from '../../../../store/hooks'
 
-function Paging(props:any){
+interface IProps{
+  pagecontainer:[any[],React.Dispatch<React.SetStateAction<any[]>>]
+}
+export default function Paging(props:IProps){
 
   // 获取用户所有项目的所有数据
-  let userProj = props.userProj
-  // 获取分页数组容器
+  let userProj = useAppSelector(state=>state.user.userProj)
+
+  // 获取分页数组容器设置函数
   let setpagecontainer = props.pagecontainer[1]
 
   // 初始化当前页数
@@ -22,16 +24,19 @@ function Paging(props:any){
 
   // 初次渲染时，计算最大的页数赋给最大页数
   useEffect(()=>{
+    if(!userProj){return}
     setmaxnum(Math.ceil(userProj.length/everynum))
   },[userProj])
 
   // 分页函数处理，更新分页数组的内容
-  let fenye =(userProj)=>{
+  const fenye =(userProj)=>{
+    // 将userProj数组按相应位置分割，传入分页数组容器
     setpagecontainer(userProj.slice((currentNum-1)*everynum,(currentNum-1)*everynum+everynum))
   }
 
   // 页数改变后，执行分页函数
   useEffect(()=>{
+    if(!userProj){return}
     fenye(userProj)
   },[currentNum,userProj])
 
@@ -53,15 +58,3 @@ function Paging(props:any){
   )
 }
 
-// 构建容器组件：
-const mapStateToProps = (state:any)=>{
-  return{
-    ...state.user
-  }
-}
-let fn:(arg:any)=>any=connect(
-  mapStateToProps,
-  {setUserinfo,setUserproj}
-)(Paging)
-
-export default fn

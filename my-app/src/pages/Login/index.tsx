@@ -7,8 +7,8 @@ import loginStyle from './index.module.css'
 
 export default function Login() {
   let navigate = useNavigate()
-  let usernameref = useRef(null)
-  let passwordref = useRef(null)
+  let usernameref = useRef<HTMLInputElement>(null)
+  let passwordref = useRef<HTMLInputElement>(null)
 
   // 点击登录后，存token，跳转用户界面
   let sign =()=>{
