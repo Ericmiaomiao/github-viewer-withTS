@@ -1,0 +1,14 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+@font-face {
+  font-family: 'iconfont';  /* Project id 4015788 */
+  src: url('//at.alicdn.com/t/c/font_4015788_mblvnjq8ugi.woff2?t=1681462420737') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4015788_mblvnjq8ugi.woff?t=1681462420737') format('woff'),
+       url('//at.alicdn.com/t/c/font_4015788_mblvnjq8ugi.ttf?t=1681462420737') format('truetype');
+}

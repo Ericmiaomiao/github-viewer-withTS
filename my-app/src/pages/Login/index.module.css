@@ -1,0 +1,77 @@
+.out{
+  width: 100%;
+}
+.loginOut{
+  width: 308px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.logo{
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f6f8fa;
+  border: 1px solid gainsboro;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.iconlogo{
+  font-family:"iconfont" !important;
+  font-size:45px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 48px;
+  text-align: center;
+}
+.loginOut>div:nth-of-type(2){
+  font-size: 24px;
+  font-weight: lighter;
+  width: 308px;
+  text-align: center;
+  margin-top: 20px;
+}
+.inputOut{
+  width: 308px;
+  background-color: #f6f8fa;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  padding: 16px 16px;
+  margin-top: 20px;
+}
+.text{
+  color: #1f2328;
+  font-size: 14px;
+}
+.input{
+  width: 274px;
+  height: 31px;
+  margin: 10px auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid gainsboro;
+}
+.input>input{
+  width: 265px;
+  width: 272px;
+  height: 28px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+.input>input:focus{
+  outline: 2px solid rgb(9,105,218);
+}
+.loginButton{
+  width: 274px;
+  height: 31px;
+  border-radius: 10px;
+  background-color: #1f883d;
+  color: #ffffff;
+  text-align: center;
+  line-height: 31px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 30px;
+}
